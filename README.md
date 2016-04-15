@@ -18,7 +18,8 @@ To clean a noisy image run:
 ```
 
 Note: the model used atm is not fully trained and works only with grayscale images.
-Note2: you can obtain a similar end result using a selective gaussian blur.
+
+Note2: you can obtain a similar result using a selective gaussian blur.
 
 Running on the GPU
 ------------
@@ -50,14 +51,18 @@ Training
 ## Training data
 
 Put the noisy images in data/images/noise/ and the clean ones in data/images/clean/.
+
 To each image in the clean folder must correspond another image with the same name and size in the
 noise folder.
+
 Image with name starting with # are ignored.
+
 Use PNG images.
 
 ## NN setup
 
 To change the network paramenters (number of layers, convolution size, ...) edit cnn/GrainExtractor.py
+
 To tweak the training parameters (learning rate, momentum, training epochs, ...) edit train.py
 
 ## Training
@@ -68,6 +73,7 @@ Run:
 ```
 
 The first layers are pretrained as a stacked denoising auto encoder and then the network is finetuned.
+
 The backup files are in models/backup and the model with the best validation score is saved in models/model_train.json
 
 ## Test
